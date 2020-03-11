@@ -1,0 +1,1 @@
+python manage.py runserver 210.115.227.87:8000

@@ -1,0 +1,5 @@
+- server side(변동 없음)
+- client side
+ -> Checkchip 시, chip 정보를 설정한 후, result ok 로 변경하도록 수정. 
+
+- Setup 명령어 실패 시에 error message 추가.

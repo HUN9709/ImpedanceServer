@@ -1,0 +1,30 @@
+- Prequisition
+ 1. Anaconda 2 를 자기의 컴퓨터에 맞는 버전을 설치(32bit, 64bit(권장))
+ 2. 설치 후에 cmd 창에서 다음 패키지들을 설치함(아래의 명령어 이용)
+  - pip install django
+  - pip install django-chartit 
+ 3. 각 기능에 맞춰서 아래의 기능을 수행한다. 순서는 상관 없음.
+ 4. (device 컴퓨터의 경우) WaveForm 관련된 SDK 설치가 필요함. 
+ 5. Python 3 인 경우, chartit 라이브러리의 validation.py 의 from django.utils import six 을 import six 로 변경이 필요.
+ 6. templatetag/chartit.py 에서도 import six 로 변경
+
+- Client(Device)
+ 1. device.zip 을 압축을 푼다.
+ 2. main.py 파일의 server_ip = "210.115.227.99" 부분을 서버 아이피에 맞춰 변경한다.(추후 서버 고정 예정)
+ 3. runclient.bat 파일을 실행한다. 
+ 4. 실행이 된 후에 CMD 창에 다음 메시지가 나타난다.
+  - 제대로 초기화가 된 경우
+   -> ### Finaling the initialize 라는 메시지가 가장 마지막에 나타난다. 
+  - 서버가 안 켜져진 경우
+   -> initConfiguration() not working..retry..(internet connection failed) 라는 메시지가 5초마다 나타남. 
+   -> 추후 서버를 키면 정상 동작됨. 
+
+- Server
+ 1. server.zip 을 압축을 푼다. 
+ 2. server 폴더 내에 mysite 폴더의 settings.py 파일의 다음 부분에 해당 서버의 주소를 추가한다.
+  - ALLOWED_HOSTS = ["210.115.227.99", "127.0.0.1"] (서버 고정 예정)
+ 3. server 폴더 내에 runserver.bat 파일의 아이피 부분을 서버에 맞춰 변경한다.  
+ 4. runserver.bat 파일을 실행한다.   
+ 5. 실행이 된 후에 CMD 창에 다음 메시지가 나타난다.
+   - Starting development server .. 와 비슷한 메시지가 나타난다. 
+
